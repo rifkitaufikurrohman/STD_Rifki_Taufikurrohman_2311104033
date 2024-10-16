@@ -96,10 +96,9 @@ int main() {
       cin >> nimDigit;
 
       address P = allocate(nimDigit);
-      insertLast(L, P); // Insert NIM digits in correct order
+      insertLast(L, P);
   }
 
-  // Display the list
   cout << "Isi list: ";
   printInfo(L);
 

@@ -16,7 +16,6 @@ struct List {
     address first;
 };
 
-// Procedure and function declarations
 void createList(List &L);
 address allocate(infoType x);
 

@@ -83,24 +83,24 @@ void printInfo(List L) {
 }
 
 int main() {
-  List L;
-  createList(L);
+    List L;
+    createList(L);
 
-  int totalDigits = 10;
-  infoType nimDigit;
+    int totalDigits = 10;
+    infoType nimDigit;
 
-  cout << "Masukkan NIM perdigit:" << endl;
-  
-  for (int i = 1; i <= totalDigits; ++i) {
-      cout << "Digit " << i << " : ";
-      cin >> nimDigit;
+    cout << "Masukkan NIM perdigit:" << endl;
+    
+    for (int i = 1; i <= totalDigits; ++i) {
+        cout << "Digit " << i << " : ";
+        cin >> nimDigit;
 
-      address P = allocate(nimDigit);
-      insertLast(L, P);
-  }
+        address P = allocate(nimDigit);
+        insertLast(L, P);
+    }
 
-  cout << "Isi list: ";
-  printInfo(L);
+    cout << "Isi list: ";
+    printInfo(L);
 
-  return 0;
+    return 0;
 }

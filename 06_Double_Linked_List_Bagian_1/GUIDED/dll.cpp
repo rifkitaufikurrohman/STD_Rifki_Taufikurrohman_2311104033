@@ -13,13 +13,11 @@ public:
     Node* head;
     Node* tail;
 
-    // Constructor untuk inisialisasi head dan tail
     DoublyLinkedList() {
         head = nullptr;
         tail = nullptr;
     }
-
-    // Fungsi untuk menambahkan elemen di depan list (push)
+    
     void push(int data) {
         Node* newNode = new Node;
         newNode->data = data;
@@ -29,40 +27,37 @@ public:
         if (head != nullptr) {
             head->prev = newNode;
         } else {
-            tail = newNode; // Jika list kosong, tail juga mengarah ke node baru
+            tail = newNode; 
         }
         head = newNode;
     }
 
-    // Fungsi untuk menghapus elemen dari depan list (pop)
     void pop() {
         if (head == nullptr) {
-            return; // Jika list kosong
+            return; 
         }
         Node* temp = head;
         head = head->next;
         if (head != nullptr) {
             head->prev = nullptr;
         } else {
-            tail = nullptr; // Jika hanya satu elemen di list
+            tail = nullptr; 
         }
-        delete temp; // Hapus elemen
+        delete temp; 
     }
 
-    // Fungsi untuk mengupdate data di list
     bool update(int oldData, int newData) {
         Node* current = head;
         while (current != nullptr) {
             if (current->data == oldData) {
                 current->data = newData;
-                return true; // Jika data ditemukan dan diupdate
+                return true; 
             }
             current = current->next;
         }
-        return false; // Jika data tidak ditemukan
+        return false; 
     }
-
-    // Fungsi untuk menghapus semua elemen di list
+    
     void deleteAll() {
         Node* current = head;
         while (current != nullptr) {
@@ -74,7 +69,6 @@ public:
         tail = nullptr;
     }
 
-    // Fungsi untuk menampilkan semua elemen di list
     void display() {
         Node* current = head;
         while (current != nullptr) {

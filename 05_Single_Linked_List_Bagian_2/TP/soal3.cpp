@@ -16,7 +16,7 @@ void insertSorted(Node*& head, int value) {
         head = newNode;
     } else {
         Node* temp = head;
-      
+    
         while (temp->next != nullptr && temp->next->data < value) {
             temp = temp->next;
         }
@@ -44,17 +44,14 @@ int main() {
         cin >> element;
         insertSorted(head, element);
     }
-  
+
     cout << "List sebelum menambahkan elemen baru: ";
     displayList(head);
-  
+
     cout << "Masukkan elemen tambahan untuk dimasukkan: ";
     cin >> element;
-  
+
     insertSorted(head, element);
-  
     cout << "List setelah menambahkan elemen baru: ";
     displayList(head);
-
-    return 0;
 }

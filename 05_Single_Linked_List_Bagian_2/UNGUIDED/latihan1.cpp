@@ -26,7 +26,7 @@ void tambahMahasiswa(Node*& head, int nim, string nama) {
     }
     temp->next = newNode;
   }
-  cout << "Mahasiswa dengan NIM "<< nim << "ditambahkan" << endl;
+  cout << "Mahasiswa dengan NIM "<< nim << " ditambahkan" << endl;
 }
 
 void cariMahasiswa(Node* head, int nim) {
@@ -89,7 +89,7 @@ int main() {
       case 4:
         cout << "Keluar program." << endl;
         break;
-        
+
       default:
         cout << "Opsi tidak valid." << endl;
     }

@@ -1,13 +1,11 @@
 #include <iostream>
 using namespace std;
 
-// Node structure
 struct Node {
     int data;
     Node* next;
 };
 
-// Function to insert a node at the end
 void insertLast(Node*& head, int value) {
     Node* newNode = new Node();
     newNode->data = value;
@@ -24,7 +22,6 @@ void insertLast(Node*& head, int value) {
     }
 }
 
-// Function to search for an element and print its address and position
 void searchElement(Node* head, int value) {
     Node* temp = head;
     int position = 1;
@@ -50,7 +47,6 @@ int main() {
     Node* head = nullptr;
     int value;
 
-    // Input 6 elements into the list
     cout << "Masukkan 6 elemen integer ke dalam list: " << endl;
     for (int i = 0; i < 6; i++) {
         int element;
@@ -59,11 +55,9 @@ int main() {
         insertLast(head, element);
     }
 
-    // Input the value to search
     cout << "Masukkan nilai yang ingin dicari: ";
     cin >> value;
 
-    // Search for the element in the list
     searchElement(head, value);
 
     return 0;

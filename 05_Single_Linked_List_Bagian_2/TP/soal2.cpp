@@ -1,13 +1,13 @@
 #include <iostream>
 using namespace std;
 
-// Node structure
+
 struct Node {
     int data;
     Node* next;
 };
 
-// Function to insert a node at the end of the list
+
 void insertLast(Node*& head, int value) {
     Node* newNode = new Node();
     newNode->data = value;
@@ -24,7 +24,6 @@ void insertLast(Node*& head, int value) {
     }
 }
 
-// Function to display the list
 void displayList(Node* head) {
     Node* temp = head;
     while (temp != nullptr) {
@@ -34,7 +33,6 @@ void displayList(Node* head) {
     cout << endl;
 }
 
-// Bubble Sort function for the linked list
 void bubbleSortList(Node* head) {
     if (head == nullptr) return;
 
@@ -48,7 +46,7 @@ void bubbleSortList(Node* head) {
 
         while (current->next != lastPtr) {
             if (current->data > current->next->data) {
-                // Swap data between current and current->next
+                
                 int temp = current->data;
                 current->data = current->next->data;
                 current->next->data = temp;
@@ -63,7 +61,6 @@ void bubbleSortList(Node* head) {
 int main() {
     Node* head = nullptr;
 
-    // Input 5 elements into the list
     cout << "Masukkan 5 elemen integer ke dalam list: " << endl;
     for (int i = 0; i < 5; i++) {
         int element;
@@ -72,16 +69,14 @@ int main() {
         insertLast(head, element);
     }
 
-    // Display the list before sorting
     cout << "List sebelum diurutkan: ";
     displayList(head);
 
-    // Sort the list using Bubble Sort
     bubbleSortList(head);
 
-    // Display the sorted list
     cout << "List setelah diurutkan: ";
     displayList(head);
 
     return 0;
 }
+

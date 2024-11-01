@@ -97,6 +97,6 @@ int main() {
   cout << "\n" << endl;
 
   destroyArrayBuku();
-  cout << "Top setelah di destroy = " << top << endl;
+  cout << "Top setelah dihapus = " << top << endl;
   cetakArrayBuku();
 }

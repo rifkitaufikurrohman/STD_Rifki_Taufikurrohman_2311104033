@@ -1,28 +1,42 @@
 #include <iostream>
-#include "stack.h"
-// #include "stack.cpp"
+#include <stack>
+#include <string>
+#include <algorithm>
 using namespace std;
 
+bool isPalindrome(const string& input) {
+  stack<char> charStack;
+  string sanitizedInput;
+
+  for (char ch : input) {
+    if (isalnum(ch)) {
+      sanitizedInput += tolower(ch);
+    }
+  }
+
+  for (char ch : sanitizedInput) {
+    charStack.push(ch);
+  }
+
+  string reversed;
+  while (!charStack.empty()) {
+    reversed += charStack.top();
+    charStack.pop();
+  }
+
+  return sanitizedInput == reversed;
+}
+
 int main() {
-  cout << "Hello world!" << endl;
+  string input;
+  cout << "Masukkan Kalimat: ";
+  getline(cin, input);
 
-  Stack S;
-  createStack(S);
-  
-  push(S, 3);
-  push(S, 4);
-  push(S, 8);
-  pop(S);
-  push(S, 2);
-  push(S, 3);
-  pop(S);
-  push(S, 9);
-
-  printInfo(S);
-  
-  cout << "balik stack" << endl;
-  balikStack(S);
-  printInfo(S);
+  if (isPalindrome(input)) {
+    cout << "Kalimat tersebut adalah Palindrom\n";
+  } else {
+    cout << "Kalimat tersebut adalah bukan Palindrom\n";
+  }
 
   return 0;
 }

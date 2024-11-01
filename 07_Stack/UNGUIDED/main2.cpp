@@ -1,25 +1,42 @@
 #include <iostream>
-#include "stack.h"
+#include <stack>
+#include <sstream>
+#include <string>
 using namespace std;
 
+string reverseWords(const string& input) {
+  stack<char> charStack;
+  stringstream ss(input);
+  string word, result;
+
+  while (ss >> word) {
+    for (char ch : word) {
+      charStack.push(ch);
+    }
+    
+    while (!charStack.empty()) {
+      result += charStack.top();
+      charStack.pop();
+    }
+    result += " "; 
+  }
+
+  if (!result.empty()) {
+    result.pop_back();
+  }
+
+  return result;
+}
+
 int main() {
-  cout << "Hello world!" << endl;
+  string input;
+  cout << "Masukkan Kata: ";
+  getline(std::cin, input);
 
-  Stack S;
-  createStack(S);
+  string reversedSentence = reverseWords(input);
 
-  pushAscending(S, 3);
-  pushAscending(S, 4); 
-  pushAscending(S, 8);
-  pushAscending(S, 2);
-  pushAscending(S, 3);
-  pushAscending(S, 9);
-
-  printInfo(S);
-  
-  cout << "balik stack" << endl;
-  balikStack(S);
-  printInfo(S);
+  cout << "Datastack Array:\n";
+  cout << "Data: " << reversedSentence << std::endl;
 
   return 0;
 }
